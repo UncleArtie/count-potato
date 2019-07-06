@@ -53,6 +53,23 @@ $(document).ready(function() {
     //alert('got here');
     //p = (p + 1) % potatoes.length;
     p++;
+
+    if (p === potatoes[potatoes.length - 1])
+      $("#reset").hover(
+        function() {
+          i = 0;
+          $("#count").text(i);
+          p = 0;
+          $("#reset")
+            .addClass("hoverIn")
+            .removeClass("hoverOut");
+        },
+        function() {
+          $("#reset")
+            .removeClass("hoverIn")
+            .addClass("hoverOut");
+        }
+      );
     $("#count").text(potatoes[p]);
     $("#success")
       .show("slow")
