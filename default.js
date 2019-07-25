@@ -50,14 +50,14 @@ $(document).ready(function() {
   $("#reset").addClass("hoverOut");
   var p = 0;
   $("#potato").click(function() {
-    //alert('got here');
-    //p = (p + 1) % potatoes.length;
     p++;
 
-    if (p === potatoes[potatoes.length - 1])
+    if (p === potatoes[potatoes.length - 1]) {
       $("#reset").hover(
         function() {
-          i = 0;
+          // @ts-ignore
+          i = " ";
+          // @ts-ignore
           $("#count").text(i);
           p = 0;
           $("#reset")
@@ -70,15 +70,18 @@ $(document).ready(function() {
             .addClass("hoverOut");
         }
       );
+    }
     $("#count").text(potatoes[p]);
     $("#success")
-      .show("slow")
-      .fadeOut(1000);
+      .show("fast")
+      .fadeOut(100);
   });
 
   $("#reset").hover(
     function() {
-      i = 0;
+      // @ts-ignore
+      i = " ";
+      // @ts-ignore
       $("#count").text(i);
       p = 0;
       $("#reset")
